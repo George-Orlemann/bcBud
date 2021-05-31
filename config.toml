@@ -1,0 +1,123 @@
+################################### Default Configuration ############################
+baseurl = "/"
+title = "A living wage. A healthy workforce. That's what BCBUD is here for."
+# post excert
+summarylength = "20"
+# google analytics
+googleAnalytics = "" # Ex: UA-123-45
+# disable language
+disableLanguages = ["fr"] # disable language from here
+
+# unsafe html
+[markup.goldmark.renderer]
+unsafe = true
+
+#################################### Plugins ##########################################
+
+# CSS Plugins
+[[params.plugins.css]]
+link = "https://fonts.googleapis.com/css?family==Gothic+A1:400|Kaushan+Script:300,400,600,700"
+[[params.plugins.css]]
+link = "plugins/bootstrap/bootstrap.min.css"
+[[params.plugins.css]]
+link = "plugins/themify-icons/themify-icons.css"
+[[params.plugins.css]]
+link = "plugins/slick/slick.min.css"
+
+# JS Plugins
+[[params.plugins.js]]
+link = "plugins/jquery/jquery.js"
+[[params.plugins.js]]
+link = "plugins/bootstrap/bootstrap.min.js"
+[[params.plugins.js]]
+link = "plugins/slick/slick.min.js"
+
+
+###################################### Navigation ######################################
+
+# homepage section menu
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 1
+
+[[menu.main]]
+name = "Community"
+url = "community"
+weight = 2
+
+[[menu.main]]
+name = "Work & Wages"
+url = "work"
+weight = 3
+
+[[menu.main]]
+name = "Unionize 101"
+url = "unionize"
+weight = 4
+
+[[menu.main]]
+name = "Contact us"
+url = "contact"
+weight = 5
+
+# footer menu
+[[menu.footer]]
+name = "Contact"
+url = "contact"
+weight = 1
+
+########################### Default parameters ##########################
+[params]
+logo = "images/pins/pinMountains.webp"
+logo_width = "50px"
+# Meta data
+description = "A living wage. A healthy workforce. That's what BCBUD is here for. "
+author = "George Orlemann"
+# currency
+currency = "$"
+# contact form action
+contact_form_action = "#" # contact form works with https://formspree.io
+# Footer
+footerbg = "images/backgrounds/bannerMountains.png"
+
+
+# Social Links
+[[params.social]]
+  icon = "ti-instagram"
+  link = "https://www.instagram.com/bcbudtenders/"
+
+[[params.social]]
+  icon = "ti-tiktok"
+  link = "https://www.tiktok.com/@budtendersbc?lang=en"
+
+# Preloader
+[params.preloader]
+enable = true
+preloader = ""
+
+# Subscription
+[params.subscription]
+# mailchimp subsciption
+mailchimp_form_action = "" # replace this url
+mailchimp_form_name = "" # replace this code
+
+
+################################### English language #####################################
+[Languages.en]
+languageName = "En"
+languageCode = "en-us"
+contentDir = "content/english"
+weight = 1
+# copyright
+copyright = "Designed & Developed by union supporters"
+
+
+################################### French language #####################################
+[Languages.fr]
+languageName = "Fr"
+languageCode = "fr-fr"
+contentDir = "content/french"
+weight = 2
+# copyright
+copyright = "Conçu et développé par des partisans du syndicat"

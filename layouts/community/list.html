@@ -1,0 +1,52 @@
+{{ define "main" }}
+{{ with .Params.image_home }}
+
+<section class="section call-to-action">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-xs-2 col-sm-2 col-md-4 text-center mb-5">
+        <img class="img-fluid hide" src="{{ .image_one | absURL }}" alt="">
+      </div>
+      {{ end }}
+      <div class="col-xs-8 col-sm-8 col-md-8 text-center mb-5 align-self-center">
+        <h1>{{.Title}}</h1>
+        {{ with .Params.discord_q }}
+        <h3 class="">{{ .subheading | markdownify }}</h3>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-10 col-sm-10 text-center mb-4">
+        <h2 class="font-weight-bold mb-4">{{ .title | markdownify }}</h2>
+        <p>{{ .content | markdownify }}</p>
+      </div>
+    </div>
+  </div>
+  {{- partial "discord.html" . }}
+  {{ end }}
+  <div class="container">
+    {{ with .Params.join }}
+    <div class="row justify-content-center rounded">
+      <div class="col-lg-10 col-sm-10 text-center mb-4">
+        <h2 class="font-weight-bold mb-4">{{ .title | markdownify }}</h2>
+        <p>{{ .content | markdownify }}</p>
+      </div>
+    </div>
+  </div>
+  {{- partial "apply.html" . }}
+  {{ end }}
+  <div class="container">
+    {{ with .Params.fund }}
+    <div class="row justify-content-center">
+      <div class="col-lg-10 col-sm-10 text-center mb-4">
+        <h2 class="font-weight-bold mb-4">{{ .title | markdownify }}</h2>
+        <p>{{ .content | markdownify }}</p>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+  {{ with .Params.opportunities }}
+  {{- partial "opportunities.html" . }}
+  {{ end }}
+</section>
+
+{{ end }}

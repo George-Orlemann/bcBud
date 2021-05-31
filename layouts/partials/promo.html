@@ -1,0 +1,28 @@
+{{ $data := index .Site.Data .Site.Language.Lang }}
+
+{{ if $data.homepage.promo.enable }}
+{{ with $data.homepage.promo }}
+<section id="promo" class="section bg-img" style="background-image: url('{{ .overlayImage | absURL }}');">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="content">
+          <h2 class="subheading font-weight-bold text-center">{{ .title | markdownify }}</h2>
+          <p>{{ .content | markdownify }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-md-3">
+        {{ if .button.enable }}
+        {{ with .button }}
+        <a href="{{ if .Pre }}{{ site.BaseURL | relLangURL }}{{ .link }}{{ .Pre }}{{ .clicker }}{{else}}{{ .link | absLangURL}}{{end}}"
+          class="btn btn-main">{{.label}}</a>
+        {{ end }}
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+{{ end }}
